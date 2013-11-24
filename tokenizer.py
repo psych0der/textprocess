@@ -1,0 +1,33 @@
+'''
+
+Tokenizer splits (tokenizes) strings as data pre-processing step.
+It excepts file as well as string as an input. 
+
+'''
+
+def tokenize(input, readFile=False):
+	# input can be file as well as string
+	
+	if isinstance(input,file):
+		lines = []  	#  list to store lines in the file
+		lines = input.readlines()
+		lines = [line.replace('\n','').replace('. ',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',') for line in lines]
+		return lines
+
+		
+	if isinstance(input,str):
+		if readFile == True:
+			lines = []  	#  list to store lines in the file
+			inputFile = open(input)
+			lines = inputFile.readlines()
+			lines = [line.replace('\n','').replace('. ',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',') for line in lines]
+			inputFile.close()
+			return lines
+
+		else :
+			line = input
+			line = line.replace('\n','').replace('. ',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',')
+			return line
+
+#print tokenize('file.txt',readFile=True)
+
