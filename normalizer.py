@@ -42,4 +42,4 @@ def normalize(input, multiList=False):
 
 
 
-#print normalize('Hello There AKA Hahahah JJk'.split(' '))
+print normalize('Hello There AKA Hahahah JJk'.split(' '))

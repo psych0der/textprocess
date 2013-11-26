@@ -59,5 +59,82 @@ def cvc(word):
 		return False
 
 
+def rreplace(s, old, new):
+	li = s.rsplit(old, 1)
+	return new.join(li)
+
+
+flag1b = 0
+
+
+def step1a(word):
+	if word.endswith("sses"):
+		word = rreplace(word,"sses","ss")
+		return word
+
+	if word.endswith("ies"):
+		word = rreplace(word,"ies","i")
+		return word
+
+	if word.endswith("ss"):
+		return word
+
+	if word.endswith("s"):
+		word = rreplace(word,"s","")
+		return word
+
+	return False
+
+
+def step1b(word):
+	if word.endswith("eed"):
+		if measure(rreplace(word,"eed","")) > 0:
+			word = rreplace(word,"eed","ee")
+			return word
+
+	if word.endswith("ed"):
+		if containsVowel(rreplace(word,"eed","")):
+			word = rreplace(word,"ed","")
+			flag1b = 1
+			return word
+
+	if word.endswith("ing"):
+		if containsVowel(rreplace(word,"ing","")):
+			word = rreplace(word,"ing","")
+			flag1b = 1
+			return word
+
+	return False
+
+def postStep1b(word):
+	if word.endswith("at"):
+		word = word+'e'
+		return word
+
+	if word.endswith("bz"):
+		word = word+'e'
+		return word
+
+	if word.endswith("iz"):
+		word = word+'e'
+		return word
+
+	if endsWithDoubleConsonant(word) and not (word.endswith('l') or word.endswith('s') or word.endswith('z')) :
+		word = word[:-1]
+		return word
+
+	if measure(word) ==1 and cvc(word) :
+		word = word + 'e'
+
+	return False
+
+
+
+
+#w = "motoring"
+#print step1b(w)
+
+
+
 
 
