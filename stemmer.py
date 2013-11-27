@@ -1,8 +1,8 @@
 '''
-
 Module to implement stemming and lemmatization operation on words based on porters algorithm.
-
+Baed on : http://tartarus.org/%7Emartin/PorterStemmer/def.txt
 '''
+
 import normalizer
 import stopwordremover
 
