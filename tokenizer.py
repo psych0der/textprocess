@@ -11,7 +11,7 @@ def tokenize(input, readFile=False):
 	if isinstance(input,file):
 		lines = []  	#  list to store lines in the file
 		lines = input.readlines()
-		lines = [line.replace('\n','').replace('. ',',').replace(':',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',') for line in lines]
+		lines = [line.replace('\n','').replace('. ',',').replace(':',',').replace('-',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',') for line in lines]
 		lines = filter(None, lines)
 		return lines
 
@@ -21,14 +21,14 @@ def tokenize(input, readFile=False):
 			lines = []  	#  list to store lines in the file
 			inputFile = open(input)
 			lines = inputFile.readlines()
-			lines = [line.replace('\n','').replace('. ',',').replace(':',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',') for line in lines]
+			lines = [line.replace('\n','').replace('. ',',').replace(':',',').replace('-',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',') for line in lines]
 			inputFile.close()
 			lines = filter(None, lines)
 			return lines
 
 		else :
 			line = input
-			line = line.replace('\n','').replace('. ',',').replace(':',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',')
+			line = line.replace('\n','').replace('. ',',').replace(':',',').replace('-',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',')
 			line = filter(None, line)
 			return line
 

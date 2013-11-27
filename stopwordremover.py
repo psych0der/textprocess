@@ -2,11 +2,9 @@ import tokenizer
 import normalizer
 
 '''
-
 Stop word remover removes stop words from a list of words or stringand return strings
-
-It can support multple languges
-
+It can support multple languges.
+Also removes numerical strings.
 '''
 
 stopwords = {}	# dictionary to strore stopwords of languages
@@ -27,17 +25,17 @@ stopwords['english'] = ['a','able','about','across','after','all','almost','also
 
 def remove_stop_word(input,multiList=False):
 	if isinstance(input,str):
-		filtered = [word for word in normalizer.normalize(input) if word not in stopwords['english']]
+		filtered = [word for word in normalizer.normalize(input) if (word not in stopwords['english'] and not unicode(word).isnumeric())]
 		return filtered
 
 	if not isinstance(input, basestring):
 		if multiList == True:
 			for index,lst in input:
-				input[index] = [word for word in normalizer.normalize(lst) if word not in stopwords['english']]
+				input[index] = [word for word in normalizer.normalize(lst) (word not in stopwords['english'] and not unicode(word).isnumeric())]
 			return input
 
 		else :
-			input = [word for word in normalizer.normalize(input) if word not in stopwords['english']]
+			input = [word for word in normalizer.normalize(input) (word not in stopwords['english'] and not unicode(word).isnumeric())]
 			return input
 
 
