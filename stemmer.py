@@ -379,7 +379,7 @@ def lemmatizationEngine(word):
 		word = step2(word)
 		word = step3(word)
 		word = step4(word)
-		word = step5a(word)
+		#word = step5a(word)
 		word = step5b(word)
 
 		
