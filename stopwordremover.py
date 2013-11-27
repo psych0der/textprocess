@@ -27,7 +27,7 @@ stopwords['english'] = ['a','able','about','across','after','all','almost','also
 
 def remove_stop_word(input,multiList=False):
 	if isinstance(input,str):
-		filtered = [word for word in normalizer.normalize(tokenizer.tokenize(input)) if word not in stopwords['english']]
+		filtered = [word for word in normalizer.normalize(input) if word not in stopwords['english']]
 		return filtered
 
 	if not isinstance(input, basestring):
@@ -42,4 +42,4 @@ def remove_stop_word(input,multiList=False):
 
 
 #print tokenizer.tokenize('sdfdsf sdffsd sdfsdfds')
-print remove_stop_word('hello i Am mayank. I Am a Good boy')
+#print remove_stop_word('hello i Am mayank. I Am a Good boy')

@@ -1,4 +1,5 @@
 import re
+import tokenizer
 
 '''
 Perform basic text normalization which includes
@@ -11,7 +12,7 @@ def normalize(input, multiList=False):
 
 	if isinstance(input,str):
 		
-		line = input.split(' ')
+		line = tokenizer.tokenize(input)
 		
 		for index,word in enumerate(line):
 			# if word is abbreviation or some other important word
@@ -42,4 +43,4 @@ def normalize(input, multiList=False):
 
 
 
-print normalize('Hello There AKA Hahahah JJk'.split(' '))
+#print normalize('Hello ThEre AKA Hahahah JJk')
