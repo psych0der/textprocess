@@ -379,7 +379,7 @@ def lemmatizationEngine(word):
 		word = step2(word)
 		word = step3(word)
 		word = step4(word)
-		#word = step5a(word)
+		word = step5a(word)
 		word = step5b(word)
 
 		
@@ -418,7 +418,7 @@ def lemmatize(input,multiList=False,cascade=True):
 
 
 if __name__ == "__main__":
-	print lemmatize("Provoking me tO tHE fullest overriding")
+	print lemmatize("Sankararaman case: Kanchi seers, other accused acquitted")
 
 #w = "motoring"
 #print step1b(w)
