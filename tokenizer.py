@@ -29,7 +29,7 @@ def tokenize(input, readFile=False):
 		else :
 			line = input
 			line = line.replace('\n','').replace('. ',',').replace(':',',').replace(' ',',').replace(';',',').replace('/',',').replace('\\',',').split(',')
-			lines = filter(None, lines)
+			line = filter(None, line)
 			return line
 
 #print tokenize('file.txt',readFile=True)
