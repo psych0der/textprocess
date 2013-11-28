@@ -25,17 +25,17 @@ stopwords['english'] = ['a','able','about','across','after','all','almost','also
 
 def remove_stop_word(input,multiList=False):
 	if isinstance(input,str):
-		filtered = [word for word in normalizer.normalize(input) if (word not in stopwords['english'] and not unicode(word).isnumeric())]
+		filtered = [word for word in normalizer.normalize(input) if (word not in stopwords['english'] and not word.isdigit())]
 		return filtered
 
 	if not isinstance(input, basestring):
 		if multiList == True:
 			for index,lst in input:
-				input[index] = [word for word in normalizer.normalize(lst) (word not in stopwords['english'] and not unicode(word).isnumeric())]
+				input[index] = [word for word in normalizer.normalize(lst) (word not in stopwords['english'] and not word.isdigit())]
 			return input
 
 		else :
-			input = [word for word in normalizer.normalize(input) (word not in stopwords['english'] and not unicode(word).isnumeric())]
+			input = [word for word in normalizer.normalize(input) (word not in stopwords['english'] and not word.isdigit())]
 			return input
 
 

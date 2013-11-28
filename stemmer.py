@@ -413,7 +413,7 @@ def lemmatize(input,multiList=False,cascade=True):
 		for word in lst:
 			stemmed.append(lemmatizationEngine(word))
 
-		stemmed = list(set(stemmed))
+		#stemmed = list(set(stemmed))
 		return stemmed
 
 
