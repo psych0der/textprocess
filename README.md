@@ -88,7 +88,7 @@ MIT
 
 Live Demo
 ----------
-You can test the public on cloud by visiting this URL
+You can test the public api on cloud by visiting this URL
 [textprocess](http://cloudpreprocessing.herokuapp.com)
 
 Flask app credits : [Shivam Bansal](https://github.com/shivam5992)
