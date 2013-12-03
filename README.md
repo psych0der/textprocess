@@ -18,8 +18,8 @@ Installation
 
 ```shell
 pip install textprocess
-
 ```
+
 Usage
 ----------
 
@@ -40,11 +40,11 @@ from textprocess import tokenizer
 input = open('input.txt')
 tokenized = tokenizer.tokenize(input, readFile=True)
 ```    
+_________
 
 * Following functions accepts string , list , multilist(pass multilist=True)
 * Tokenization is implicitely called in following functions
 
-____
 
 #### Normalization
 
@@ -89,9 +89,9 @@ MIT
 Live Demo
 ----------
 You can test the public on cloud by visiting this URL
-(textprocess)[http://cloudpreprocessing.herokuapp.com]
+[textprocess](http://cloudpreprocessing.herokuapp.com)
 
-Flask app credits : (Shivam Bansal)[https://github.com/shivam5992]
+Flask app credits : [Shivam Bansal](https://github.com/shivam5992)
 
 
   
